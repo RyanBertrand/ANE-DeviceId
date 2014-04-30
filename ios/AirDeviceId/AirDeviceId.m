@@ -225,7 +225,7 @@ DEFINE_ANE_FUNCTION(getIDFA) {
     FREObject fo = NULL;
     
     // get the id
-    if ([[ASIdentifierManager sharedManager] respondsToSelector:@selector(advertisingIdentifier)]) {
+    if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
         
         NSLog(@"advertisingIdentifier supported");
         NSString* idString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
